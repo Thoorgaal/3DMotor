@@ -13,14 +13,26 @@ class Matrix{
         Matrix();
         Matrix(std::array<float,16> cmatrix);
         float getI(std::size_t i) const;
+        float operator[](std::size_t i) const;
 };
 
 std::ostream& operator<<(std::ostream &os, Matrix const& mat);
+
+bool operator==(Matrix const& m1,Matrix const& m2);
+
+bool operator!=(Matrix const& m1,Matrix const& m2);
+
 Matrix operator+(Matrix const& m1,Matrix const& m2);
+
 //this function is made just for gate the result of one step of the entire calcul
-float getCalc(Matrix const& m1,Matrix const& m2, size_t l1,size_t l2);
-float getCalc(Matrix const& m, Coord const& coord, std::size_t l);
+float getCalcM(Matrix const& m1,Matrix const& m2, size_t l1,size_t l2);
+
+
+
 Matrix operator*(Matrix const& m1,Matrix const& m2);
-Coord operator*(Matrix const& m, Coord const& coord);
+
+float getCalcCoord(Matrix const& m, Coord const& coord, std::size_t l);
+
+Coord operator*(Coord const& coord,Matrix const& m );
 
 #endif

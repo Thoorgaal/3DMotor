@@ -6,7 +6,7 @@
 
 //this class is made for manage any point's, shape's transformation
 class Transformation{
-    private:
+    protected:
         Matrix transformation;
     public:
         Transformation(Matrix trans);
